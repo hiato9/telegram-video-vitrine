@@ -16,13 +16,27 @@
       <header class="header">
         <p class="eyebrow">Videochamada</p>
         <h1>Escolha uma modelo</h1>
-        <p class="sub">Toque no card para confirmar. Você volta ao chat na hora.</p>
+        <p class="sub">Toque numa modelo para ver prévias e escolher o plano.</p>
       </header>
       <main id="grid" class="grid"></main>
     </div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="modal-close" data-close="1" aria-label="Fechar">×</button>
+        <div id="modal-head"></div>
+        <p class="modal-label">Prévias</p>
+        <div id="modal-previews" class="carousel"></div>
+        <p class="modal-label">Escolha o plano</p>
+        <div id="modal-plans" class="plans"></div>
+      </div>
+    </div>
+
     <div id="toast" class="toast" hidden></div>
     <script src="./config.js"></script>
     <script src="./models.js"></script>
+    <script src="./plans.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

@@ -4,10 +4,10 @@ Página Mini App para o usuário escolher uma modelo e voltar ao chat do Telegra
 
 ## Fluxo
 
-1. No BotBrain, um botão **Mini App / Web App** abre esta página.
-2. O usuário toca um card.
-3. O Mini App fecha e o bot recebe a escolha.
-4. Na BotBrain, responda: `Ótima escolha, {nome}! Vamos prosseguir.`
+1. No BotFather, Mini App aponta para a URL HTTPS.
+2. O usuário toca um card, vê prévias e escolhe um plano.
+3. O Mini App fecha e volta ao chat.
+4. O bot recebe a escolha e responde.
 
 ## Contrato da escolha
 
@@ -18,18 +18,19 @@ Dois caminhos (o Mini App tenta os dois):
 JSON:
 
 ```json
-{"type":"model_selected","id":"luna","name":"Luna"}
+{"type":"plan_selected","modelId":"luna","modelName":"Luna","planId":"vip","planName":"VIP + Chamada"}
 ```
 
-IDs: `luna`, `maya`, `sofia`, `valentina`, `isabela`, `helena`, `alice`, `clara`.
+Modelos: `luna`, `maya`, `sofia`, `valentina`, `isabela`, `helena`, `alice`, `clara`.
+Planos: `curta`, `longa`, `vip`.
 
-Só chega se o botão da BotBrain for **teclado embaixo do input** com tipo Mini App. Botão inline costuma **não** disparar isso.
+Só chega se o Mini App abriu por **teclado reply** com tipo Web App.
 
-### 2. `/start escolha_{id}` (recomendado na BotBrain)
+### 2. `/start escolha_{modelo}_{plano}` (recomendado)
 
-Exemplo: `/start escolha_luna`
+Exemplo: `/start escolha_luna_vip`
 
-Gatilho na BotBrain: comando `/start` cujo parâmetro começa com `escolha_`.
+Gatilho: `/start` com parâmetro `escolha_*`.
 
 ## Setup
 
@@ -81,11 +82,14 @@ Texto:
 Ótima escolha, {nome}! Vamos prosseguir.
 ```
 
-Se a plataforma não interpolar o JSON, use um passo por modelo (`escolha_luna`, `escolha_maya`, …) ou leia o parâmetro depois de `escolha_`.
+Se a plataforma não interpolar o JSON, use um passo por combinação (`escolha_luna_vip`, …) ou leia o parâmetro depois de `escolha_`.
 
-## Trocar modelos
+## Trocar modelos e planos
 
-Edite `public/models.js`. `id` só pode ter letras, números e `_` (vira o `start`).
+- Modelos: `public/models.js`
+- Planos e preços: `public/plans.js`
+
+`id` só pode ter letras, números e `_` (vira o `start`).
 
 ## Fora deste projeto
 
