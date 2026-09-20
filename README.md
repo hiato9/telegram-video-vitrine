@@ -39,10 +39,10 @@ Gatilho: `/start` com parâmetro `escolha_*`.
 Em `public/config.js`:
 
 ```js
-botUsername: "seu_bot",
+botUsername: "acafetinabot",
 ```
 
-Sem `@`. Também vale `https://seu-dominio/?bot=seu_bot`.
+Sem `@`. Também vale `https://seu-dominio/?bot=acafetinabot`.
 
 ### 2. Publicar em HTTPS
 
@@ -70,7 +70,11 @@ Isso não substitui o teste no Telegram.
 
 Use botão tipo **Mini App / Web App**, não link comum (link comum abre o browser e `sendData` não existe).
 
-URL: a mesma do passo 3.
+URL:
+
+```
+https://hiato9.github.io/telegram-video-vitrine/
+```
 
 ### 5. Mensagem de retorno
 
