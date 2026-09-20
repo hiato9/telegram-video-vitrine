@@ -1,0 +1,7 @@
+{
+  "name": "telegram-video-vitrine",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve public -p 4173"
+  }
+}
