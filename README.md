@@ -45,9 +45,11 @@ Sem `@`. Também vale `https://seu-dominio/?bot=seu_bot`.
 
 ### 2. Publicar em HTTPS
 
-Telegram não abre Mini App em `http://`.
+URL no ar:
 
-Opções rápidas: Cloudflare Pages, GitHub Pages ou Vercel apontando para `public/`.
+https://hiato9.github.io/telegram-video-vitrine/
+
+Cola essa URL no BotFather em **Mini Apps**.
 
 Preview local:
 
